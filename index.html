@@ -73,14 +73,14 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
 /* dropdown */
 .nav-drop{position:relative;}
 .nav-drop-menu{
-  position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);
-  background:var(--s3);border:1px solid var(--b2);border-radius:var(--r);
-  padding:8px 0;min-width:220px;
-  opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-8px);
+  position:absolute;top:100%;left:50%;
+  padding-top:14px;
+  min-width:220px;
+  opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-6px);
   transition:opacity .25s,transform .25s cubic-bezier(.23,1,.32,1);
   z-index:100;
-  box-shadow:0 24px 60px rgba(0,0,0,.5);
 }
+.nav-drop-menu-inner{background:var(--s3);border:1px solid var(--b2);border-radius:var(--r);padding:8px 0;box-shadow:0 24px 60px rgba(0,0,0,.5);}
 .nav-drop:hover .nav-drop-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
 .nav-drop-menu a{display:block;padding:9px 18px;font-size:13px;color:var(--w3);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;font-weight:400;letter-spacing:.02em;}
 .nav-drop-menu a::after{display:none;}
@@ -230,14 +230,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
 .test-name{font-size:13px;font-weight:500;color:var(--w);}
 .test-role{font-size:11px;color:var(--w3);}
 
-/* ─ CONSULTATION ─ */
-.consult-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;}
-.consult-card{background:var(--s2);border:1px solid var(--b);border-radius:var(--r);padding:36px 28px;text-align:left;transition:border-color .3s,transform .3s;transform-style:preserve-3d;}
-.consult-card:hover{border-color:var(--bac);transform:translateY(-4px);}
-.consult-ico{font-size:28px;margin-bottom:16px;}
-.consult-title{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;margin-bottom:10px;}
-.consult-desc{font-size:13px;color:var(--w2);font-weight:300;line-height:1.8;}
-
 /* ─ PRICING ─ */
 .pricing-hd{text-align:center;}
 .pricing-hd .sec-sub{margin:0 auto;}
@@ -366,6 +358,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
     <li class="nav-drop">
       <a href="/services.html">Services ▾</a>
       <div class="nav-drop-menu">
+        <div class="nav-drop-menu-inner">
         <a href="/service-web-development.html">Web Development</a>
         <a href="/service-seo.html">SEO Services</a>
         <a href="/service-local-seo.html">Local SEO</a>
@@ -378,6 +371,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
         <a href="/service-cloud.html">Cloud & Infrastructure</a>
         <a href="/service-uiux.html">UI/UX Design</a>
         <a href="/service-maintenance.html">Web Maintenance</a>
+        </div>
       </div>
     </li>
     <li><a href="/portfolio.html">Our Work</a></li>
@@ -655,31 +649,55 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
 
 <!-- ═══ CONSULTATION ═══ -->
 <section class="sec" id="consultation" style="background:linear-gradient(180deg,var(--s0) 0%,var(--s1) 50%,var(--s0) 100%);">
-  <div class="wrap" style="text-align:center;max-width:800px;">
-    <p class="eyebrow sr" style="justify-content:center;">Let's Talk</p>
-    <h2 class="sec-title sr d1">Pricing built around<br>your business needs.</h2>
-    <p class="sec-sub sr d2" style="margin:0 auto 60px;">Every business is different — a clinic in Andheri has different needs than a restaurant in Koramangala. We don't do one-size-fits-all pricing. Book a free consultation and we'll put together a plan that actually makes sense for you.</p>
-    <div class="consult-grid sr d2">
-      <div class="consult-card" data-tilt>
-        <div class="consult-ico">🔍</div>
-        <div class="consult-title">Free Audit</div>
-        <p class="consult-desc">We review your current Google presence and show you exactly where you're losing customers — no cost, no obligation.</p>
+  <div class="wrap">
+    <div class="pricing-hd">
+      <p class="eyebrow sr" style="justify-content:center;">Let's Talk</p>
+      <h2 class="sec-title sr d1">Pricing built around your business.</h2>
+      <p class="sec-sub sr d2">Every business is different. We don't do one-size-fits-all — book a free consultation and we'll build a plan that makes sense for you.</p>
+    </div>
+    <div class="p-grid">
+      <div class="pc sr" data-tilt>
+        <div class="p-name">Free Audit</div>
+        <div class="p-desc" style="margin-bottom:20px;">We review your Google presence and show you exactly where you're losing customers — no cost, no obligation.</div>
+        <div class="p-div"></div>
+        <ul class="p-feats">
+          <li><span class="fi fy"></span>Google Business Profile review</li>
+          <li><span class="fi fy"></span>Local SEO gap analysis</li>
+          <li><span class="fi fy"></span>Competitor comparison</li>
+          <li><span class="fi fy"></span>Actionable recommendations</li>
+          <li><span class="fi fy"></span>100% free, no strings attached</li>
+        </ul>
+        <a href="/contact.html" class="p-btn p-ghost">Get Free Audit →</a>
       </div>
-      <div class="consult-card" data-tilt>
-        <div class="consult-ico">💬</div>
-        <div class="consult-title">Honest Advice</div>
-        <p class="consult-desc">We only recommend what you actually need. No upselling, no confusing packages. Just a clear plan with clear outcomes.</p>
+      <div class="pc pc-feat sr d1" data-tilt>
+        <div class="pop-tag">Recommended</div>
+        <div class="p-name">Free Consultation</div>
+        <div class="p-desc" style="margin-bottom:20px;">We understand your goals and put together a custom plan with clear deliverables and honest pricing — before you commit to anything.</div>
+        <div class="p-div"></div>
+        <ul class="p-feats">
+          <li><span class="fi fy"></span>30-minute strategy call</li>
+          <li><span class="fi fy"></span>Custom growth plan for your business</li>
+          <li><span class="fi fy"></span>Clear, no-hidden-fee quote</li>
+          <li><span class="fi fy"></span>Only recommend what you need</li>
+          <li><span class="fi fy"></span>No pressure, no commitment</li>
+        </ul>
+        <a href="/contact.html" class="p-btn p-solid">Book Consultation →</a>
       </div>
-      <div class="consult-card" data-tilt>
-        <div class="consult-ico">⚡</div>
-        <div class="consult-title">Reply in 2 Hours</div>
-        <p class="consult-desc">Fill the form and we'll get back to you within 2 hours with your free audit. Most clients see results within 30 days.</p>
+      <div class="pc sr d2" data-tilt>
+        <div class="p-name">Fast Reply</div>
+        <div class="p-desc" style="margin-bottom:20px;">Fill the form and we reply within 2 hours. Most clients see results within 30 days. Responsive, accountable, based in Mumbai.</div>
+        <div class="p-div"></div>
+        <ul class="p-feats">
+          <li><span class="fi fy"></span>Reply within 2 hours</li>
+          <li><span class="fi fy"></span>WhatsApp support included</li>
+          <li><span class="fi fy"></span>Results within 30 days</li>
+          <li><span class="fi fy"></span>Transparent monthly reports</li>
+          <li><span class="fi fy"></span>Cancel anytime, no lock-in</li>
+        </ul>
+        <a href="/contact.html" class="p-btn p-ghost">Talk to Us →</a>
       </div>
     </div>
-    <div style="margin-top:52px;" class="sr d3">
-      <a href="/contact.html" class="btn-solid" style="font-size:14px;padding:15px 40px;">Book Your Free Consultation →</a>
-      <p style="margin-top:16px;font-size:12px;color:var(--w3);letter-spacing:.04em;">No commitment. No credit card. Just a conversation.</p>
-    </div>
+    <p class="sr" style="text-align:center;margin-top:22px;font-size:12px;color:var(--w3);letter-spacing:.04em;">No commitment. No credit card. Just a conversation about growing your business.</p>
   </div>
 </section>
 
@@ -722,7 +740,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
     <div class="foot-contact">
       <a href="tel:+919876543210">+91 98765 43210</a>
       <a href="https://wa.me/919876543210">WhatsApp: +91 98765 43210</a>
-      <a href="/cdn-cgi/l/email-protection#87efe2ebebe8c7f5e6e9ecf5eee3a9eee9"><span class="__cf_email__" data-cfemail="1c74797070735c6e7d72776e7578327572">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#08606d646467487a6966637a616c266166"><span class="__cf_email__" data-cfemail="f49c9198989bb486959a9f869d90da9d9a">[email&#160;protected]</span></a>
       <a href="#">Mumbai, Maharashtra, India</a>
     </div>
   </div>
