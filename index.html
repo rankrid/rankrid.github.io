@@ -73,15 +73,18 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
 /* dropdown */
 .nav-drop{position:relative;}
 .nav-drop-menu{
-  position:absolute;top:100%;left:50%;
-  padding-top:14px;
-  min-width:220px;
-  opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-6px);
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  padding-top:14px;min-width:220px;
+  opacity:0;pointer-events:none;
   transition:opacity .25s,transform .25s cubic-bezier(.23,1,.32,1);
   z-index:100;
 }
-.nav-drop-menu-inner{background:var(--s3);border:1px solid var(--b2);border-radius:var(--r);padding:8px 0;box-shadow:0 24px 60px rgba(0,0,0,.5);}
 .nav-drop:hover .nav-drop-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.nav-drop-bridge{
+  background:var(--s3);border:1px solid var(--b2);border-radius:var(--r);
+  padding:8px 0;
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+}
 .nav-drop-menu a{display:block;padding:9px 18px;font-size:13px;color:var(--w3);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;font-weight:400;letter-spacing:.02em;}
 .nav-drop-menu a::after{display:none;}
 .nav-drop-menu a:hover{color:var(--w);background:var(--s4);}
@@ -349,28 +352,27 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
 <div class="orb o1"></div>
 <div class="orb o2"></div>
 
-<!-- ═══ NAV ═══ -->
 <nav id="nav">
   <a href="/" class="logo"><div class="logo-mark">R</div>Rankrid</a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/about.html">About</a></li>
     <li class="nav-drop">
-      <a href="/services.html">Services ▾</a>
+      <a href="/service-all.html">Services ▾</a>
       <div class="nav-drop-menu">
-        <div class="nav-drop-menu-inner">
-        <a href="/service-web-development.html">Web Development</a>
-        <a href="/service-seo.html">SEO Services</a>
-        <a href="/service-local-seo.html">Local SEO</a>
-        <a href="/service-branding.html">Branding & Design</a>
-        <a href="/service-social-media.html">Social Media Marketing</a>
-        <a href="/service-paid-ads.html">Digital Marketing</a>
-        <a href="/service-content.html">Content Services</a>
-        <a href="/service-ecommerce.html">E-commerce Solutions</a>
-        <a href="/service-automation.html">Automation & SaaS</a>
-        <a href="/service-cloud.html">Cloud & Infrastructure</a>
-        <a href="/service-uiux.html">UI/UX Design</a>
-        <a href="/service-maintenance.html">Web Maintenance</a>
+        <div class="nav-drop-bridge">
+          <a href="/service-web-development.html">Web Development</a>
+          <a href="/service-seo.html">SEO Services</a>
+          <a href="/service-local-seo.html">Local SEO</a>
+          <a href="/service-branding.html">Branding & Design</a>
+          <a href="/service-social-media.html">Social Media Marketing</a>
+          <a href="/service-paid-ads.html">Digital Marketing</a>
+          <a href="/service-content.html">Content Services</a>
+          <a href="/service-ecommerce.html">E-commerce Solutions</a>
+          <a href="/service-automation.html">Automation & SaaS</a>
+          <a href="/service-cloud.html">Cloud & Infrastructure</a>
+          <a href="/service-ui-ux.html">UI/UX Design</a>
+          <a href="/service-maintenance.html">Web Maintenance</a>
         </div>
       </div>
     </li>
@@ -379,7 +381,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hcorner hc-tl"></div><div class="hcorner hc-tr"></div>
   <div class="hcorner hc-bl"></div><div class="hcorner hc-br"></div>
@@ -392,7 +393,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   <p class="hero-sub">Rankrid is a trusted digital agency providing web development, SEO, branding, automation, and cloud services — built for businesses that want to grow, not just exist online.</p>
   <div class="hero-ctas">
     <a href="/contact.html" class="btn-solid">Book Free Consultation</a>
-    <a href="/services.html" class="btn-ghost">Explore Services</a>
+    <a href="/service-all.html" class="btn-ghost">Explore Services</a>
     <a href="/portfolio.html" class="btn-ac">Our Work</a>
   </div>
   <div class="hero-pins">
@@ -404,10 +405,8 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ RIBBON ═══ -->
 <div class="ribbon"><div class="rib-track" id="ribTrack"></div></div>
 
-<!-- ═══ STATS ═══ -->
 <div class="stats" id="statsWrap">
   <div class="stat sr"><div class="stat-n"><span id="c1">0</span><sup>+</sup></div><div class="stat-l">Projects Delivered</div></div>
   <div class="stat sr d1"><div class="stat-n"><span id="c2">0</span><sup>+</sup></div><div class="stat-l">Happy Clients</div></div>
@@ -415,7 +414,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   <div class="stat sr d3"><div class="stat-n"><span id="c3">0</span><sup>+</sup></div><div class="stat-l">Cities Served</div></div>
 </div>
 
-<!-- ═══ SERVICES ═══ -->
 <section class="sec" id="services">
   <div class="wrap">
     <p class="eyebrow sr">Our Services</p>
@@ -508,7 +506,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
         <h3 class="svc-title">UI/UX Design</h3>
         <p class="svc-desc">User research, wireframing, prototyping, and pixel-perfect interface design. We design experiences that feel effortless and convert visitors into customers.</p>
         <div class="svc-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Prototyping</span><span class="svc-tag">User Research</span></div>
-        <a href="/service-uiux.html" class="svc-link">Explore →</a>
+        <a href="/service-ui-ux.html" class="svc-link">Explore →</a>
       </div>
 
       <div class="svc sr d2" data-tilt>
@@ -523,7 +521,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
 <section class="sec" id="about" style="background:linear-gradient(180deg,var(--s0) 0%,var(--s1) 50%,var(--s0) 100%);">
   <div class="wrap">
     <div class="about-grid">
@@ -563,7 +560,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ PROCESS ═══ -->
 <section class="sec" id="process">
   <div class="wrap">
     <p class="eyebrow sr">Our Process</p>
@@ -578,7 +574,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ INDUSTRIES ═══ -->
 <section class="sec" style="background:linear-gradient(180deg,var(--s0) 0%,var(--s1) 50%,var(--s0) 100%);">
   <div class="wrap">
     <p class="eyebrow sr">Industries We Serve</p>
@@ -608,7 +603,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ TECH STACK ═══ -->
 <section class="sec tech-sec">
   <div class="wrap">
     <p class="eyebrow sr">Technologies</p>
@@ -622,7 +616,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
 <section class="sec">
   <div class="wrap">
     <p class="eyebrow sr">Client Testimonials</p>
@@ -647,61 +640,65 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ CONSULTATION ═══ -->
-<section class="sec" id="consultation" style="background:linear-gradient(180deg,var(--s0) 0%,var(--s1) 50%,var(--s0) 100%);">
+<section class="sec" id="pricing" style="background:linear-gradient(180deg,var(--s0) 0%,var(--s1) 50%,var(--s0) 100%);">
   <div class="wrap">
     <div class="pricing-hd">
-      <p class="eyebrow sr" style="justify-content:center;">Let's Talk</p>
-      <h2 class="sec-title sr d1">Pricing built around your business.</h2>
-      <p class="sec-sub sr d2">Every business is different. We don't do one-size-fits-all — book a free consultation and we'll build a plan that makes sense for you.</p>
+      <p class="eyebrow sr" style="justify-content:center;">Free Consultation</p>
+      <h2 class="sec-title sr d1">Expert guidance. No strings.</h2>
+      <p class="sec-sub sr d2">We analyze your digital presence and provide a clear growth roadmap. No hidden fees, no jargon, and zero commitment required.</p>
     </div>
     <div class="p-grid">
       <div class="pc sr" data-tilt>
-        <div class="p-name">Free Audit</div>
-        <div class="p-desc" style="margin-bottom:20px;">We review your Google presence and show you exactly where you're losing customers — no cost, no obligation.</div>
+        <div class="p-name">Digital Audit</div>
+        <div class="p-price"><span class="p-amt">Free</span><span class="p-per"> Analysis</span></div>
+        <div class="p-desc">A complete checkup of your website, SEO, and visibility to identify immediate growth opportunities.</div>
         <div class="p-div"></div>
         <ul class="p-feats">
-          <li><span class="fi fy"></span>Google Business Profile review</li>
-          <li><span class="fi fy"></span>Local SEO gap analysis</li>
-          <li><span class="fi fy"></span>Competitor comparison</li>
-          <li><span class="fi fy"></span>Actionable recommendations</li>
-          <li><span class="fi fy"></span>100% free, no strings attached</li>
+          <li><span class="fi fy"></span>Full Technical SEO Audit</li>
+          <li><span class="fi fy"></span>Competitor Ranking Analysis</li>
+          <li><span class="fi fy"></span>Website Performance Report</li>
+          <li><span class="fi fy"></span>Local Visibility Assessment</li>
+          <li><span class="fi fy"></span>Mobile-Friendly Testing</li>
+          <li><span class="fi fy"></span>Security Vulnerability Check</li>
         </ul>
         <a href="/contact.html" class="p-btn p-ghost">Get Free Audit →</a>
       </div>
       <div class="pc pc-feat sr d1" data-tilt>
-        <div class="pop-tag">Recommended</div>
-        <div class="p-name">Free Consultation</div>
-        <div class="p-desc" style="margin-bottom:20px;">We understand your goals and put together a custom plan with clear deliverables and honest pricing — before you commit to anything.</div>
+        <div class="pop-tag">Highly Recommended</div>
+        <div class="p-name">Strategy Session</div>
+        <div class="p-price"><span class="p-amt">Free</span><span class="p-per"> 30-Min Call</span></div>
+        <div class="p-desc">Speak directly with our experts to discuss your business goals and build a winning digital strategy.</div>
         <div class="p-div"></div>
         <ul class="p-feats">
-          <li><span class="fi fy"></span>30-minute strategy call</li>
-          <li><span class="fi fy"></span>Custom growth plan for your business</li>
-          <li><span class="fi fy"></span>Clear, no-hidden-fee quote</li>
-          <li><span class="fi fy"></span>Only recommend what you need</li>
-          <li><span class="fi fy"></span>No pressure, no commitment</li>
+          <li><span class="fi fy"></span>One-on-one Strategy Call</li>
+          <li><span class="fi fy"></span>Custom Digital Roadmap</li>
+          <li><span class="fi fy"></span>Budget Allocation Guidance</li>
+          <li><span class="fi fy"></span>Platform Recommendations</li>
+          <li><span class="fi fy"></span>ROI Projection Planning</li>
+          <li><span class="fi fy"></span>Live Q&A with Experts</li>
         </ul>
-        <a href="/contact.html" class="p-btn p-solid">Book Consultation →</a>
+        <a href="/contact.html" class="p-btn p-solid">Book Free Session →</a>
       </div>
       <div class="pc sr d2" data-tilt>
-        <div class="p-name">Fast Reply</div>
-        <div class="p-desc" style="margin-bottom:20px;">Fill the form and we reply within 2 hours. Most clients see results within 30 days. Responsive, accountable, based in Mumbai.</div>
+        <div class="p-name">Fast Inquiry</div>
+        <div class="p-price"><span class="p-amt">Fast</span><span class="p-per"> Response</span></div>
+        <div class="p-desc">Got a specific question? Send us a message and get a professional response within 2 working hours.</div>
         <div class="p-div"></div>
         <ul class="p-feats">
-          <li><span class="fi fy"></span>Reply within 2 hours</li>
-          <li><span class="fi fy"></span>WhatsApp support included</li>
-          <li><span class="fi fy"></span>Results within 30 days</li>
-          <li><span class="fi fy"></span>Transparent monthly reports</li>
-          <li><span class="fi fy"></span>Cancel anytime, no lock-in</li>
+          <li><span class="fi fy"></span>Direct Expert Access</li>
+          <li><span class="fi fy"></span>WhatsApp Support Sync</li>
+          <li><span class="fi fy"></span>Quick Project Quotes</li>
+          <li><span class="fi fy"></span>Technical Problem Solving</li>
+          <li><span class="fi fy"></span>Service Customization</li>
+          <li><span class="fi fy"></span>2-Hour Priority Response</li>
         </ul>
-        <a href="/contact.html" class="p-btn p-ghost">Talk to Us →</a>
+        <a href="https://wa.me/919876543210" class="p-btn p-ghost">Chat on WhatsApp →</a>
       </div>
     </div>
-    <p class="sr" style="text-align:center;margin-top:22px;font-size:12px;color:var(--w3);letter-spacing:.04em;">No commitment. No credit card. Just a conversation about growing your business.</p>
+    <p class="sr" style="text-align:center;margin-top:22px;font-size:12px;color:var(--w3);letter-spacing:.04em;">All consultations are 100% free with no obligation to sign up for services.</p>
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
 <section class="sec">
   <div class="wrap">
     <p class="eyebrow sr">Questions</p>
@@ -717,7 +714,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
 <section class="sec" style="padding:80px 0 100px;">
   <div class="wrap">
     <div class="cta-box sr">
@@ -732,7 +728,6 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
 <footer class="foot-main">
   <div>
     <div class="foot-logo">Rankrid</div>
@@ -740,7 +735,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
     <div class="foot-contact">
       <a href="tel:+919876543210">+91 98765 43210</a>
       <a href="https://wa.me/919876543210">WhatsApp: +91 98765 43210</a>
-      <a href="/cdn-cgi/l/email-protection#08606d646467487a6966637a616c266166"><span class="__cf_email__" data-cfemail="f49c9198989bb486959a9f869d90da9d9a">[email&#160;protected]</span></a>
+      <a href="mailto:hello@rankrid.in">hello@rankrid.in</a>
       <a href="#">Mumbai, Maharashtra, India</a>
     </div>
   </div>
@@ -762,7 +757,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
       <li><a href="/service-ecommerce.html">E-commerce</a></li>
       <li><a href="/service-automation.html">Automation & SaaS</a></li>
       <li><a href="/service-cloud.html">Cloud & Infrastructure</a></li>
-      <li><a href="/service-uiux.html">UI/UX Design</a></li>
+      <li><a href="/service-ui-ux.html">UI/UX Design</a></li>
       <li><a href="/service-maintenance.html">Web Maintenance</a></li>
     </ul>
   </div>
@@ -783,7 +778,7 @@ nav.scrolled{background:rgba(5,5,7,.94);backdrop-filter:blur(28px) saturate(1.4)
   <p class="foot-ac">Full-service digital agency — India.</p>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── CANVAS ── */
 (()=>{
   const C=document.getElementById('bgc'),ctx=C.getContext('2d');
@@ -841,4 +836,8 @@ document.querySelectorAll('[data-tilt]').forEach(el=>{
   el.addEventListener('mouseleave',()=>{el.style.transition='transform .6s cubic-bezier(.23,1,.32,1)';el.style.transform='perspective(900px) rotateX(0) rotateY(0) translateZ(0)';});
 });
 
-/* ── FAQ ── *
+/* ── FAQ ── */
+function toggleFaq(btn){const item=btn.parentElement,was=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');}
+</script>
+</body>
+</html>
